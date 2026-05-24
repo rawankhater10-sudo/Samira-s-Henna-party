@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة حفل حناء سميرة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0010 0%, #2d0020 50%, #1a0010 100%);
+            color: #fff;
+            font-family: 'Arabic Typesetting', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .invitation-card {
+            background: radial-gradient(circle at 20% 50%, rgba(255, 0, 85, 0.1), transparent),
+                        radial-gradient(circle at 80% 80%, rgba(255, 51, 119, 0.1), transparent),
+                        rgba(20, 10, 20, 0.9);
+            border: 3px solid #ff0055;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 40px rgba(255, 0, 85, 0.5), 
+                        inset 0 0 20px rgba(255, 51, 119, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 0, 85, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .invitation-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -30%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 51, 119, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055; }
+            50% { text-shadow: 0 0 20px #ff00c8, 0 0 30px #ff00c8, 0 0 40px #ff00c8; }
+            100% { text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055; }
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .header-decoration {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .roses {
+            font-size: 2.5rem;
+            letter-spacing: 20px;
+            margin-bottom: 20px;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #ff0055;
+            margin-bottom: 10px;
+            animation: neonPulse 2s ease-in-out infinite;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff3377;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff0055, transparent);
+            margin: 30px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .invitation-content {
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        .invitation-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+            text-align: right;
+        }
+
+        .details-section {
+            background: rgba(255, 0, 85, 0.05);
+            border-right: 3px solid #ff0055;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .detail-item {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .detail-icon {
+            font-size: 1.8rem;
+            min-width: 30px;
+        }
+
+        .detail-content {
+            text-align: right;
+        }
+
+        .detail-label {
+            color: #ff3377;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .detail-value {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .dress-code {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .dress-code-emoji {
+            font-size: 2.5rem;
+            margin: 15px 0;
+            animation: shimmer 2.5s ease-in-out infinite;
+        }
+
+        .rsvp-section {
+            background: rgba(255, 0, 85, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px dashed #ff0055;
+        }
+
+        .rsvp-title {
+            font-size: 1.3rem;
+            color: #ff0055;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .rsvp-info {
+            font-size: 1rem;
+            color: #f0f0f0;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+
+        .contact-method {
+            background: rgba(255, 51, 119, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            color: #ff3377;
+            font-weight: bold;
+        }
+
+        .footer-message {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #ff3377;
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        .sparkles {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            animation: shimmer 1.5s ease-in-out infinite;
+        }
+
+        .bottom-decoration {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2rem;
+            letter-spacing: 15px;
+            opacity: 0.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 600px) {
+            .invitation-card {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .roses {
+                font-size: 2rem;
+                letter-spacing: 10px;
+            }
+
+            .invitation-text {
+                font-size: 1rem;
+            }
+
+            .detail-item {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+        
+        <div class="header-decoration">
+            <div class="roses">🌹 🌹 🌹</div>
+            <h1>دعوة خاصة</h1>
+            <div class="subtitle">بحفل حناء سميرة</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="invitation-content">
+            
+            <div class="invitation-text">
+                <p>يشرفنا أن ندعوك للاحتفال معنا في ليلة مميزة وأنيقة</p>
+                <p style="margin-top: 15px;">حفل حناء جميلتنا <strong style="color: #ff00c8;">سميرة</strong></p>
+                <p style="margin-top: 15px;">ليلة من الفرح والرقص والذكريات التي لن تُنسى</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="details-section">
+                
+                <div class="detail-item">
+                    <div class="detail-content">
+                        <div class="detail-label">التاريخ</div>
+                        <div class="detail-value">[أدخل التاريخ هنا]</div>
+                    </div>
+                    <div class="detail-icon">📅</div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-content">
+                        <div class="detail-label">الوقت</div>
+                        <div class="detail-value">[أدخل الوقت هنا]</div>
+                    </div>
+                    <div class="detail-icon">⏰</div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-content">
+                        <div class="detail-label">المكان</div>
+                        <div class="detail-value">[أدخل المكان هنا]</div>
+                    </div>
+                    <div class="detail-icon">📍</div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-content">
+                        <div class="detail-label">العنوان الكامل</div>
+                        <div class="detail-value">[أدخل العنوان الكامل هنا]</div>
+                    </div>
+                    <div class="detail-icon">🏠</div>
+                </div>
+
+            </div>
+
+            <div class="dress-code">
+                <div class="dress-code-emoji">💃✨👗</div>
+                <p><strong style="color: #ff00c8;">الملبس:</strong> أنيق وفستان (الديسكو والحناء)</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="rsvp-section">
+                <div class="rsvp-title">الرجاء تأكيد الحضور قبل:</div>
+                <div class="rsvp-info">[أدخل آخر موعد للتأكيد]</div>
+                
+                <div style="margin-top: 20px; font-size: 0.95rem; color: #f0f0f0;">
+                    <p style="margin-bottom: 12px;"><strong style="color: #ff3377;">التواصل معنا عبر:</strong></p>
+                    <div class="contact-method">📱 [أدخل رقم الهاتف]</div>
+                    <div class="contact-method">💬 [أدخل رقم الواتس]</div>
+                    <div class="contact-method">📧 [أدخل البريد الإلكتروني]</div>
+                </div>
+            </div>
+
+            <div class="footer-message">
+                <div class="sparkles">✨ ✨ ✨</div>
+                <p style="margin-top: 15px;">ننتظرك في ليلة لا تُنسى مليئة بالفرح والموسيقى والحب</p>
+                <div class="sparkles" style="margin-top: 15px;">💃 🕺 🥂</div>
+            </div>
+
+        </div>
+
+        <div class="bottom-decoration">
+            🌹 💕 🌹
+        </div>
+
+    </div>
+</body>
+</html>
