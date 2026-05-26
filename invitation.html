@@ -25,14 +25,15 @@
         .invitation-card {
             background: radial-gradient(circle at 20% 50%, rgba(255, 0, 85, 0.1), transparent),
                         radial-gradient(circle at 80% 80%, rgba(255, 51, 119, 0.1), transparent),
-                        rgba(20, 10, 20, 0.9);
+                        rgba(20, 10, 20, 0.95);
             border: 3px solid #ff0055;
             border-radius: 20px;
             padding: 60px 40px;
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
-            box-shadow: 0 0 40px rgba(255, 0, 85, 0.5), 
-                        inset 0 0 20px rgba(255, 51, 119, 0.1);
+            box-shadow: 0 0 50px rgba(255, 0, 85, 0.6), 
+                        0 0 100px rgba(255, 0, 85, 0.3),
+                        inset 0 0 30px rgba(255, 51, 119, 0.15);
             position: relative;
             overflow: hidden;
         }
@@ -44,7 +45,7 @@
             right: -50%;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(255, 0, 85, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 0, 85, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
@@ -56,7 +57,7 @@
             left: -30%;
             width: 250px;
             height: 250px;
-            background: radial-gradient(circle, rgba(255, 51, 119, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 51, 119, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite reverse;
         }
@@ -78,6 +79,11 @@
             100% { opacity: 0.5; }
         }
 
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 5px #ff0055); }
+            50% { filter: drop-shadow(0 0 15px #ff00c8); }
+        }
+
         .header-decoration {
             text-align: center;
             margin-bottom: 30px;
@@ -86,33 +92,42 @@
         }
 
         .roses {
-            font-size: 2.5rem;
+            font-size: 3rem;
             letter-spacing: 20px;
             margin-bottom: 20px;
             animation: shimmer 3s ease-in-out infinite;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             color: #ff0055;
             margin-bottom: 10px;
             animation: neonPulse 2s ease-in-out infinite;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #ff3377;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             font-style: italic;
+            font-weight: 600;
+        }
+
+        .bride-name {
+            font-size: 2.5rem;
+            color: #ff00c8;
+            margin-bottom: 20px;
+            font-weight: bold;
+            animation: glow 2.5s ease-in-out infinite;
         }
 
         .divider {
-            width: 100px;
-            height: 2px;
+            width: 120px;
+            height: 3px;
             background: linear-gradient(90deg, transparent, #ff0055, transparent);
-            margin: 30px auto;
+            margin: 25px auto;
             position: relative;
             z-index: 1;
         }
@@ -120,145 +135,217 @@
         .invitation-content {
             position: relative;
             z-index: 1;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         .invitation-text {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
             color: #f0f0f0;
             text-align: right;
+            font-weight: 500;
         }
 
         .details-section {
-            background: rgba(255, 0, 85, 0.05);
-            border-right: 3px solid #ff0055;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 10px;
+            background: rgba(255, 0, 85, 0.08);
+            border-right: 4px solid #ff0055;
+            padding: 35px;
+            margin: 35px 0;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
         }
 
         .detail-item {
-            margin: 20px 0;
-            font-size: 1.1rem;
+            margin: 25px 0;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 15px;
+            gap: 20px;
         }
 
         .detail-icon {
-            font-size: 1.8rem;
-            min-width: 30px;
+            font-size: 2.2rem;
+            min-width: 40px;
+            animation: glow 3s ease-in-out infinite;
         }
 
         .detail-content {
             text-align: right;
+            flex: 1;
         }
 
         .detail-label {
             color: #ff3377;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .detail-value {
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            margin-top: 5px;
+            font-weight: 600;
         }
 
         .dress-code {
             text-align: center;
-            margin: 30px 0;
-            font-size: 1.1rem;
+            margin: 35px 0;
+            font-size: 1.2rem;
+            background: rgba(255, 51, 119, 0.1);
+            padding: 25px;
+            border-radius: 15px;
         }
 
         .dress-code-emoji {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 15px 0;
             animation: shimmer 2.5s ease-in-out infinite;
+            letter-spacing: 10px;
+        }
+
+        .dress-code-text {
+            color: #ff00c8;
+            font-weight: bold;
+            font-size: 1.3rem;
         }
 
         .rsvp-section {
-            background: rgba(255, 0, 85, 0.1);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
+            background: rgba(255, 0, 85, 0.12);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 35px 0;
             text-align: center;
             border: 2px dashed #ff0055;
+            backdrop-filter: blur(5px);
         }
 
         .rsvp-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #ff0055;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .rsvp-info {
-            font-size: 1rem;
+        .rsvp-deadline {
+            font-size: 1.2rem;
             color: #f0f0f0;
-            margin: 10px 0;
-            word-break: break-all;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .contact-methods {
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+
+        .contact-methods-title {
+            color: #ff3377;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .contact-method {
-            background: rgba(255, 51, 119, 0.1);
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
+            background: rgba(255, 51, 119, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 12px 0;
             color: #ff3377;
             font-weight: bold;
+            font-size: 1.1rem;
+            border-left: 3px solid #ff0055;
         }
 
         .footer-message {
             text-align: center;
             margin-top: 40px;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: #ff3377;
             position: relative;
             z-index: 1;
             font-weight: bold;
+            line-height: 1.8;
         }
 
         .sparkles {
-            font-size: 1.5rem;
-            letter-spacing: 10px;
+            font-size: 1.8rem;
+            letter-spacing: 12px;
             animation: shimmer 1.5s ease-in-out infinite;
+            margin: 15px 0;
         }
 
         .bottom-decoration {
             text-align: center;
             margin-top: 30px;
-            font-size: 2rem;
+            font-size: 2.5rem;
             letter-spacing: 15px;
-            opacity: 0.7;
+            opacity: 0.8;
             position: relative;
             z-index: 1;
+            animation: shimmer 2s ease-in-out infinite;
         }
 
-        @media (max-width: 600px) {
+        .special-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #ff3377;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
             .invitation-card {
                 padding: 40px 25px;
             }
 
             h1 {
+                font-size: 2.2rem;
+            }
+
+            .bride-name {
                 font-size: 2rem;
             }
 
             .roses {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 letter-spacing: 10px;
             }
 
+            .subtitle {
+                font-size: 1.4rem;
+            }
+
             .invitation-text {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .detail-item {
                 flex-direction: column;
                 justify-content: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .details-section {
+                border-right: none;
+                border-top: 4px solid #ff0055;
+                padding: 25px;
+            }
+
+            .detail-icon {
+                min-width: auto;
+            }
+
+            .detail-content {
                 text-align: center;
             }
         }
@@ -270,7 +357,8 @@
         <div class="header-decoration">
             <div class="roses">🌹 🌹 🌹</div>
             <h1>دعوة خاصة</h1>
-            <div class="subtitle">بحفل حناء سميرة</div>
+            <div class="subtitle">بحفل الحناء</div>
+            <div class="bride-name">سميرة</div>
         </div>
 
         <div class="divider"></div>
@@ -278,9 +366,8 @@
         <div class="invitation-content">
             
             <div class="invitation-text">
-                <p>يشرفنا أن ندعوك للاحتفال معنا في ليلة مميزة وأنيقة</p>
-                <p style="margin-top: 15px;">حفل حناء جميلتنا <strong style="color: #ff00c8;">سميرة</strong></p>
-                <p style="margin-top: 15px;">ليلة من الفرح والرقص والذكريات التي لن تُنسى</p>
+                <p>🎉 يشرفنا أن ندعوك للاحتفال معنا في ليلة مميزة وأنيقة 🎉</p>
+                <p style="margin-top: 20px;">ليلة من الفرح والرقص والذكريات التي لن تُنسى</p>
             </div>
 
             <div class="divider"></div>
@@ -289,67 +376,69 @@
                 
                 <div class="detail-item">
                     <div class="detail-content">
-                        <div class="detail-label">التاريخ</div>
-                        <div class="detail-value">[أدخل التاريخ هنا]</div>
+                        <div class="detail-label">📅 التاريخ</div>
+                        <div class="detail-value">السبت 28 من شهر يونيو 2025</div>
                     </div>
-                    <div class="detail-icon">📅</div>
                 </div>
 
                 <div class="detail-item">
                     <div class="detail-content">
-                        <div class="detail-label">الوقت</div>
-                        <div class="detail-value">[أدخل الوقت هنا]</div>
+                        <div class="detail-label">⏰ الوقت</div>
+                        <div class="detail-value">من الساعة 8:00 مساءً الى 2:00 صباحاً</div>
                     </div>
-                    <div class="detail-icon">⏰</div>
                 </div>
 
                 <div class="detail-item">
                     <div class="detail-content">
-                        <div class="detail-label">المكان</div>
-                        <div class="detail-value">[أدخل المكان هنا]</div>
+                        <div class="detail-label">📍 المكان</div>
+                        <div class="detail-value">قاعة الفرح الملكية</div>
                     </div>
-                    <div class="detail-icon">📍</div>
                 </div>
 
                 <div class="detail-item">
                     <div class="detail-content">
-                        <div class="detail-label">العنوان الكامل</div>
-                        <div class="detail-value">[أدخل العنوان الكامل هنا]</div>
+                        <div class="detail-label">🏠 العنوان الكامل</div>
+                        <div class="detail-value">شارع النيل، الدقي، الجيزة - مصر</div>
                     </div>
-                    <div class="detail-icon">🏠</div>
                 </div>
 
             </div>
 
             <div class="dress-code">
-                <div class="dress-code-emoji">💃✨👗</div>
-                <p><strong style="color: #ff00c8;">الملبس:</strong> أنيق وفستان (الديسكو والحناء)</p>
+                <div class="dress-code-emoji">💃 ✨ 👗</div>
+                <div class="dress-code-text">الملبس: أنيق وفستان</div>
+                <p style="margin-top: 12px; font-size: 1.05rem; color: #f0f0f0;">(الديسكو والحناء)</p>
             </div>
 
             <div class="divider"></div>
 
             <div class="rsvp-section">
-                <div class="rsvp-title">الرجاء تأكيد الحضور قبل:</div>
-                <div class="rsvp-info">[أدخل آخر موعد للتأكيد]</div>
+                <div class="rsvp-title">✅ تأكيد الحضور</div>
+                <div class="rsvp-deadline">الرجاء تأكيد الحضور قبل: <strong>20 يونيو 2025</strong></div>
                 
-                <div style="margin-top: 20px; font-size: 0.95rem; color: #f0f0f0;">
-                    <p style="margin-bottom: 12px;"><strong style="color: #ff3377;">التواصل معنا عبر:</strong></p>
-                    <div class="contact-method">📱 [أدخل رقم الهاتف]</div>
-                    <div class="contact-method">💬 [أدخل رقم الواتس]</div>
-                    <div class="contact-method">📧 [أدخل البريد الإلكتروني]</div>
+                <div class="contact-methods">
+                    <p class="contact-methods-title">📞 التواصل معنا عبر:</p>
+                    <div class="contact-method">📱 +20 123 456 7890</div>
+                    <div class="contact-method">💬 WhatsApp: +20 123 456 7890</div>
+                    <div class="contact-method">📧 samira.henna@email.com</div>
                 </div>
             </div>
 
             <div class="footer-message">
                 <div class="sparkles">✨ ✨ ✨</div>
-                <p style="margin-top: 15px;">ننتظرك في ليلة لا تُنسى مليئة بالفرح والموسيقى والحب</p>
-                <div class="sparkles" style="margin-top: 15px;">💃 🕺 🥂</div>
+                <p>ننتظرك في ليلة لا تُنسى</p>
+                <p>مليئة بالفرح والموسيقى والحب</p>
+                <div class="sparkles" style="margin-top: 20px;">💃 🕺 🥂</div>
             </div>
 
         </div>
 
         <div class="bottom-decoration">
             🌹 💕 🌹
+        </div>
+
+        <div class="special-note">
+            ~ جزاكم الله خيراً ~
         </div>
 
     </div>
